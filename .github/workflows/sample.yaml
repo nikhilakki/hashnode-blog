@@ -8,6 +8,11 @@ name: Build and Test
 on:
   push:
     branches: [main]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'The environment to deploy to (e.g. production, staging)'
+        required: true
 
 jobs:
   build-and-test:
